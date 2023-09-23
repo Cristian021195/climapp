@@ -7,11 +7,15 @@ export const PublicRouter = () => {
 
     <BrowserRouter>
         <PublicHeader/>
-        <Buscardor/>
-        <Routes>
-            <Route path="/" element={<Inicio/>} />
-            <Route path="contacto" element={<Contacto/>} />            
-        </Routes>
+        <div className="d-flex justify-content-center flex-wrap">
+          <Buscardor/>
+        </div>
+        <div className="d-flex justify-content-center flex-wrap">
+          <Routes>
+              <Route path="/" element={<Inicio/>} />
+              <Route path="contacto" element={<Contacto/>} />            
+          </Routes>
+        </div>
     </BrowserRouter>
     
   )
