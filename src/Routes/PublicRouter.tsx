@@ -7,10 +7,10 @@ export const PublicRouter = () => {
 
     <BrowserRouter>
         <PublicHeader/>
-        <div className="d-flex justify-content-center flex-wrap">
+        <div className="d-flex justify-content-center flex-wrap mx-1">
           <Buscardor/>
         </div>
-        <div className="d-flex justify-content-center flex-wrap">
+        <div className="d-flex justify-content-center flex-wrap mx-1">
           <Routes>
               <Route path="/" element={<Inicio/>} />
               <Route path="contacto" element={<Contacto/>} />            

@@ -3,7 +3,7 @@ import { create } from 'zustand'
 import { debounce } from '../Helpers'
 import { datosClimap } from '../Api'
 import { IMapbox } from '../Interfaces';
-
+ 
 
 interface ISearch {
     input:string,
