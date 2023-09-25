@@ -19,7 +19,7 @@ export function MapView({coords}:ICoordObject){
         if (mapDiv.current) {
             const map = new mapboxgl.Map({
               container: mapDiv.current,
-              style: "mapbox://styles/mapbox/streets-v11",
+              style: "mapbox://styles/mapbox/outdoors-v12",
               center: coords as LngLatLike,
               zoom: 10
             });
@@ -39,8 +39,7 @@ export function MapView({coords}:ICoordObject){
     }, [mapDiv, map, coords]);*/
 
     return (
-        <div ref={mapDiv} className='-mapa map-container'>
-          sdf
+        <div ref={mapDiv} className='-mapa'>
         </div>
     )
 }

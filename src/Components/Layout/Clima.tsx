@@ -1,17 +1,18 @@
-export function Clima(){
+import { IOpenWeatherMapComponent } from "../../Interfaces";
 
+export function Clima({name="San Miguel de Tucumán", lat=0, lon=0, win_speed=0, temperatures=[30,40,20],clouds=0}:IOpenWeatherMapComponent){
     return (
         <>
             <article className="p-1 b-shadow recursos">
                 <h2>Clima</h2>
-                <h3>San Miguel de Tucumán</h3>
+                <h3>{name}</h3>
                 <br />
                 <ul>
-                    <li>longitud: 1320301, latitud: 321032</li>
-                    <li>Velocidad del viento: 231031 m/s</li>
-                    <li>Temperatura: 40°C, Máxima: 43°C, Minima: 38°C</li>
-                    <li>Nubosidad: 10%</li>
-                </ul> : <i>¡Sin datos!</i>
+                    <li>latitud: {lat} &emsp;/&emsp; longitud: {lon}, </li>
+                    <li>Velocidad del viento: {win_speed} m/s</li>
+                    <li>Temperatura: {temperatures[0]}°C, Máxima: {temperatures[1]}°C, Minima: {temperatures[2]}°C</li>
+                    <li>Nubosidad: {clouds}%</li>
+                </ul>
             </article>
         </>
     )

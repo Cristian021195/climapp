@@ -11,6 +11,7 @@ body{
 main{
   min-height: calc(100vh - 4.05em);
 }
+button{all: unset; margin: 0 0.3rem 0 0.3rem;}
 .btn{
   border-radius: 0.3rem;
   color:white;
@@ -182,6 +183,14 @@ article img{
 .input-map{
   width: 100%;
 }
+.main-section{
+  margin: 0 auto;
+  max-width: 45rem;
+  padding: 0 0.5rem 0 0.5rem;
+}
+.main-section p {
+  text-align: center;
+}
 
 @media only screen and (max-width: 720px) {
   .d-flex-centered{
@@ -197,6 +206,15 @@ article img{
     overflow-x: scroll;
   }
   .recursos{width: 100%;}
+  .main-section{
+    min-width: 20rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .main-section{
+    min-width: 12rem;
+  }
 }
 
 @media only screen and (min-width: 721px) {
@@ -254,6 +272,26 @@ article img{
     transform: translateZ(0);
     opacity: 1;
   }
+}
+
+.zoom-in{
+  animation: zoomIn 0.4s ease-in forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5, 0.5);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+  /*50%{
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0, 0);
+    display: none;
+  }*/
 }
 
 /* TEMA CLARO */
