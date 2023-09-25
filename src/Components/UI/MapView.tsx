@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef } from "react";
 import mapboxgl, { LngLatLike } from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 const MAPBOX = import.meta.env.VITE_MAPBOX
 
 mapboxgl.accessToken = MAPBOX;
@@ -9,7 +10,7 @@ mapboxgl.accessToken = MAPBOX;
 //mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 interface ICoordObject{
-    coords: LngLatLike
+    coords: number[]
 }
 
 export function MapView({coords}:ICoordObject){
@@ -19,7 +20,7 @@ export function MapView({coords}:ICoordObject){
             const map = new mapboxgl.Map({
               container: mapDiv.current,
               style: "mapbox://styles/mapbox/streets-v11",
-              center: coords,
+              center: coords as LngLatLike,
               zoom: 10
             });
         }
@@ -38,7 +39,8 @@ export function MapView({coords}:ICoordObject){
     }, [mapDiv, map, coords]);*/
 
     return (
-        <div ref={mapDiv} className='-mapa'>
+        <div ref={mapDiv} className='-mapa map-container'>
+          sdf
         </div>
     )
 }

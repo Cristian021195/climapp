@@ -23,6 +23,11 @@ export interface Feature {
     context:       Context[];
 }
 
+export interface IFeatureMapComponent {
+    place_name:    string;
+    center:        number[];
+}
+
 export interface Context {
     id:          string;
     mapbox_id:   string;

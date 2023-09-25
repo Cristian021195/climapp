@@ -75,8 +75,10 @@ input[type="text"]:focus, select:focus{
   align-items: center;
 }
 
+.p-1{padding: 1rem;}
 .gap-1{gap: 1rem;}
 .mr-4{margin-right: 2rem;}
+.br-1{border-radius: 0.5rem;}
 .error{
   background-color: rgb(255, 71, 71);
   padding: 1em;
@@ -112,6 +114,7 @@ header ul li{
   list-style: none;
   margin: 0.8em;
 }
+ul li {list-style: inside;}
 .nav-link, .nav-link:link, .nav-link:visited{
   text-decoration: none;
   color: whitesmoke;
@@ -129,6 +132,7 @@ article img{
   height: 20em;
   margin: auto;
 }
+
 .recursos ul li a, .contacto a, .contacto span{
   text-decoration: none;
   color: rgb(255, 136, 0);
@@ -175,8 +179,11 @@ article img{
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+.input-map{
+  width: 100%;
+}
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
   .d-flex-centered{
     display: flex;
     justify-content: center;
@@ -188,6 +195,13 @@ article img{
   }
   nav{
     overflow-x: scroll;
+  }
+  .recursos{width: 100%;}
+}
+
+@media only screen and (min-width: 721px) {
+  .input-map{
+    width: 20vw;
   }
 }
 /*ANIMACIONES*/
@@ -219,7 +233,7 @@ article img{
   background-color: #2e2e2e;
 }
 .mx-1{margin: 0 1rem 0 1rem;}
-
+.my-1{margin: 1rem 0 1rem 0;}
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #2e2e2e;

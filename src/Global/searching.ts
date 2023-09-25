@@ -2,23 +2,27 @@
 import { create } from 'zustand'
 import { debounce } from '../Helpers'
 import { datosClimap } from '../Api'
-import { IMapbox } from '../Interfaces';
+import { Feature, IMapbox } from '../Interfaces';
  
 
 interface ISearch {
     input:string,
-    selected:string | null,
+    selected: Feature | null,
     results_mapbox: IMapbox | null,
-    results_openwmap: unknown
+    results_openwmap: unknown,
+    loading: boolean,
+    error:string
 }
 
 interface ISearchState {
     input:string,
-    selected:string | null,
+    selected: Feature | null,
     results_mapbox: IMapbox | null,
-    results_openwmap: unknown
+    results_openwmap: unknown,
+    loading: boolean,
+    error: string,
     changeInput: (val:(string))=>unknown,
-    changeSelected: (val:string)=>void,
+    changeSelected: (f:Feature | undefined)=>void,
     getResults: (val:string)=>void,
     getResultsOWM: (val:string)=>void,
 }
@@ -29,19 +33,27 @@ export const useSearch = create<ISearchState>((set) => ({
     selected: null,
     results_mapbox: null,
     results_openwmap: null,
+    loading:false,
+    error:"",
     changeInput: debounce( async (v:string)=> {
         try {
+            set(()=>({loading:true}))
             const data = await datosClimap(v);
+            //throw new Error("Nani?");
             const jsondata:IMapbox = await data.json();
             set(()=>({results_mapbox: jsondata}))
-        } catch (error) {
-            console.log(error)
+            set(()=>({selected: jsondata.features[0]}))
+        } catch (err: any) {
+            set(()=>({error:err?.message}))
+            //console.log(err);
+        } finally {
+            set(()=>({loading:false}))
         }
         
         set(()=>({input: v}))
 
     }, 1500) as ()=>unknown,
-    changeSelected: ()=> set((state:ISearch)=>({selected: state.selected})),
+    changeSelected: (f:Feature | undefined)=> set(()=>({selected: f})),
     getResults: ()=> set((state:ISearch)=>({results_mapbox: state.results_mapbox})),
     getResultsOWM: ()=> set((state:ISearch)=>({results_openwmap: state.results_openwmap}))
 }))
