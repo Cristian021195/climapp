@@ -17,7 +17,7 @@ export function MapView({coords}:ICoordObject){
     const mapDiv = useRef(null);
     useEffect(() => {
         if (mapDiv.current) {
-            const map = new mapboxgl.Map({
+            new mapboxgl.Map({
               container: mapDiv.current,
               style: "mapbox://styles/mapbox/outdoors-v12",
               center: coords as LngLatLike,
