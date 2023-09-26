@@ -8,10 +8,10 @@ export function Clima({name="San Miguel de Tucumán", lat=0, lon=0, win_speed=0,
                 <h3>{name}</h3>
                 <br />
                 <ul>
-                    <li><b>📍 latitud:</b> {lat}</li>
-                    <li><b>📍 longitud:</b> {lon} </li>
-                    <li><b>🚀 Velocidad del viento:</b> {win_speed} m/s</li>
-                    <li><b>🌡️ Temperatura:</b>
+                    <li><b>📍 latitud: </b> {lat}</li>
+                    <li><b>📍 longitud: </b> {lon} </li>
+                    <li><b>🚀 Velocidad del viento: </b> {win_speed}m/s</li>
+                    <li><b>🌡️ Temperatura: </b>
                     </li>
                         <ul className="list-none" style={{padding:'0 0 0 2rem'}}>
                             <li><b>🟠Media: </b> {temperatures[0]}°C </li>
