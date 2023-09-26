@@ -8,7 +8,7 @@ export function Mapa({place_name, center}:IFeatureMapComponent){
     return (
         <>
             <article className={`p-1 b-shadow recursos`}>
-                <h2>Seccion mapa</h2>
+                <h2>🌎 Seccion mapa</h2>
                 <h3>{lugar}</h3>
                 <br />
                 <MapView coords={coords}/>

@@ -51,7 +51,9 @@ footer{
   min-height: 2em;
   width: 20rem;
 }
-
+.list-none li{
+  list-style: none;
+}
 article{
   margin-bottom: 2em;
 }
