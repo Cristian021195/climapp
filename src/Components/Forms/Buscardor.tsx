@@ -13,7 +13,7 @@ export const Buscardor = () => {
   return (
     <form> 
         <div className="d-flex justify-content-center flex-wrap gap-1">
-          <input type="text" placeholder="Inserte lugar" className="b-shadow mb-4 input-map" maxLength={12}
+          <input type="text" placeholder="Inserte lugar" className="b-shadow mb-4 input-map" maxLength={50}
           onChange={(e: React.ChangeEvent<HTMLInputElement>)=>{
               changeInput(e.target.value);              
           }}/>
